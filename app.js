@@ -4,10 +4,20 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+require('dotenv').config();
 
 var api = require('./routes/api');
 
 var app = express();
+
+mongoose.connect(process.env.MONGO_URI, (err, res) => {
+  if (err){
+    console.log('DB CONNECTION FAILED: '+err)
+  }
+  else{
+    console.log('DB CONNECTION SUCCESS')
+  }
+})
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
