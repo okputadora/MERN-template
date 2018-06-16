@@ -1,5 +1,5 @@
 const db = require('../models');
-const Promise = require('bluerbird');
+const Promise = require('bluebird');
 
 module.exports = {
   get: () => {
