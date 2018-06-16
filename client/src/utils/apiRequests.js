@@ -13,7 +13,7 @@ export default {
       })
     })
   },
-  
+
   postMessage: (message) => {
     return new Promise((resolve, reject) => {
       axios.post('/api/message', message)
@@ -36,7 +36,7 @@ export default {
         reject(err);
       });
     });
-  }
+  },
 
   postUser: (user) => {
     return new Promise((resolve, reject) => {
