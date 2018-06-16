@@ -7,34 +7,36 @@ import api from '../../utils/apiRequests';
 
 class Layout extends Component {
   state = {
-    userInfo: {},
-    messageInfo: {},
+    username: '',
+    age: '',
+    text: '',
   }
 
   componentWillMount() {
     // get a user and a message from the backend
     api.getUsers()
     .then(result => {
+      const userInfo = result[0];
       this.setState({
-        userInfo: result
+        username: userInfo.username,
+        age: userInfo.age
       })
     })
 
-    api.getMessage()
+    api.getMessages()
     .then(result => {
+      const messageInfo = result[0]
       this.setState({
-        messageInfo: result
+        text: messageInfo.text
       })
     })
   }
 
   render() {
-    const {name, age} = this.state.userInfo;
-    const {text, user} = this.state.messageInfo;
     return (
       <div>
-        <User name={name} age={age} />
-        <Message text={text} user={user} />
+        <User name={this.state.username} age={this.state.age} />
+        <Message text={this.state.text} user={this.state.username} />
       </div>
     )
   }

@@ -18,7 +18,13 @@ mongoose.connect(process.env.MONGO_URI, (err, res) => {
   else{
     console.log('DB CONNECTION SUCCESS')
   }
-})
+});
+
+// serve react files in a production enviornment
+// app.use(express.static(path.join(__dirname, 'client/build')));
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname+'/client/build/index.html'));
+// });
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -26,7 +32,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', api);
 
@@ -45,7 +51,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  // res.render('error');
 });
 
 module.exports = app;

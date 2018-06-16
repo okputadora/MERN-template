@@ -4,7 +4,7 @@ const Promise = require('bluebird');
 module.exports = {
   get: () => {
     return new Promise((resolve, reject) => {
-      db.User.findAll({})
+      db.User.find({})
       .then(users => {
         resolve(users)
       })

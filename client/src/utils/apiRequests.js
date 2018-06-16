@@ -6,6 +6,7 @@ export default {
     return new Promise((resolve, reject) => {
       axios.get('/api/message')
       .then(response => {
+        console.log(response)
         resolve(response.data.results)
       })
       .catch(err => {
@@ -27,12 +28,15 @@ export default {
   },
 
   getUsers: () => {
+    console.log("getting users")
     return new Promise((resolve, reject) => {
       axios.get('/api/user')
       .then(response => {
+        console.log("Got users");
         resolve(response.data.results);
       })
       .catch(err => {
+        console.log("ERROR: ", err)
         reject(err);
       });
     });

@@ -3,11 +3,14 @@ const Promise = require('bluebird');
 module.exports = {
   get: () => {
     return new Promise((resolve, reject) => {
-      db.Message.findAll({})
+      console.log("Request for messages hit the backend")
+      db.Message.find({}).populate('user')
       .then(messages => {
+        console.log("Mesg: ", messages)
         resolve(messages)
       })
       .catch(err => {
+        console.log("ERR: ", err);
         reject(err);
       });
     });
