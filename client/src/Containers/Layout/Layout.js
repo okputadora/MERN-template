@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Route, withRouter } from 'react-router-dom';
 import User from '../../Components/User/User';
 import Message from '../../Components/Message/Message';
-import { Route, withRouter } from 'react-router-dom';
+
 import classes from './layout.css';
+import image from './Assets/mern.png';
 import api from '../../utils/apiRequests';
 
 class Layout extends Component {
@@ -34,9 +36,12 @@ class Layout extends Component {
 
   render() {
     return (
-      <div>
-        <User name={this.state.username} age={this.state.age} />
-        <Message text={this.state.text} user={this.state.username} />
+      <div className={classes.Layout}>
+        <img className={classes.Image} src={image} alt="mern"/>
+        <div className={classes.Content}>
+          <User name={this.state.username} age={this.state.age} />
+          <Message text={this.state.text} user={this.state.username} />
+        </div>
       </div>
     )
   }
