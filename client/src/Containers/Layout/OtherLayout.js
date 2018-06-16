@@ -23,6 +23,9 @@ class OtherLayout extends Component {
         age: userInfo.age
       })
     })
+    .catch(err => {
+      return;
+    })
 
     api.getMessages()
     .then(results => {
@@ -30,6 +33,9 @@ class OtherLayout extends Component {
       this.setState({
         text: messageInfo.text
       })
+    })
+    .catch(err => {
+      return;
     })
   }
 
