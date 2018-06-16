@@ -1,10 +1,14 @@
 import React from 'react';
 import Layout from './Containers/Layout/Layout';
-import { BrowserRouter } from 'react-router-dom';
+import OtherLayout from './Containers/Layout/OtherLayout';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 const App = (props) => (
     <BrowserRouter>
-      <Layout />
+      <main>
+        <Route path="/" exact component={Layout} />
+        <Route path="/otherPage" component={OtherLayout} />
+      </main>
     </BrowserRouter>
 );
 
