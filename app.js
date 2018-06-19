@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI, (err, res) => {
   }
 });
 
-// serve react files in a production enviornment
+// //serve react files in a production enviornment
 // app.use(express.static(path.join(__dirname, 'client/build')));
 // app.get('/', (req, res) => {
 //   res.sendFile(path.join(__dirname+'/client/build/index.html'));
