@@ -3,7 +3,7 @@ import User from '../../Components/User/User';
 import Message from '../../Components/Message/Message';
 import { Link } from 'react-router-dom';
 import classes from './layout.css';
-import image from './Assets/mern.png';
+import image from './Assets/mern.jpg';
 import api from '../../utils/apiRequests';
 
 class Layout extends Component {

@@ -1,5 +1,5 @@
 # MERN Template
-![mern stack](mern.png)
+![mern stack](mern.jpg)
 
 ## Table of Contents
 * Introduction
@@ -60,14 +60,23 @@ and have set the port that server runs on to 3001 in `'./bin/www'`
 depending on the route called.
 * For example: if you made a get request from the front end `axios.get('/user')`
 this would be caught on the back end with `Router.get('/:resource')`
-* We import all of the controllers into api and select the appropriate one by referring to the resource
+* To invoke the appropriate controller we import all of them and use the req.params.resource
+to pick the right one.
 ```
 const resource = req.params.resource;
 const controller = controllers[resource];
 ```
 * This makes the api route handler highly modular and resuable for other projects,
 but you do need to ensure that your requests from the front end match the name of a controller
-
+#### Controllers
+* The controllers provide the CRUD operations for each model.
+* As you build out your project, logic specific to the models will go here. For example,
+maybe a profile controller would provide specific logic for encrypting a password before
+saving it in the database.
+* All of the controllers are included in an index file so that we can easily require
+all of them in the api route handler file.
+#### Models
+* The models directory contains the mongoose schemas for
 ### Client
 
 ## Customizing the project
