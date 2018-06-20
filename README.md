@@ -37,7 +37,7 @@ $ git commit -m 'init'
 (i.e. `'mongodb://localhost/mern-template'`) with your local database
 
 ### Start the app
-1. In the root directory `$ node app.js` or `$ nodemon`
+1. In the root directory `$ node bin/www` or `$ nodemon`
 1. Then cd into the client directory and run `$ npm start`
 
 __That's it! You're good to go!__
