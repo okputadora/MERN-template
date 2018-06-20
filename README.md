@@ -26,11 +26,11 @@ environment.
 $ git add .
 $ git commit -m 'init'
 ```
-1. Add your remote repo `git add remote origin <your-project-on-github>`
+1. Add your remote repo `$ git add remote origin <your-project-on-github>`
 
 ### Install the node packages
 1. Install the dependencies in the root directory`$ npm install`
-1. Install the dependencies in the client directoy `$cd client && npm install`
+1. Install the dependencies in the client directoy `$ cd client && npm install`
 
 ### Set up a local database
 1. Open the .env file in the root directory and replace the MONGO_URI value
@@ -97,7 +97,7 @@ and __App.js__ is responsible for loading the different routes using react-route
 * This is where all of stateless/dumb components live
 * There are two example components that match our models on the backend.
 #### Containers
-* This is where all of the statefull/smart components live
+* This is where all of the stateful/smart components live
 * There are two examples containers in the Layout directory. They both render our two dumb
 components. The only reason we have two containers is to demonstrate the routing capability.
 #### utils

@@ -20,11 +20,11 @@ mongoose.connect(process.env.MONGO_URI, (err, res) => {
   }
 });
 
-// //serve react files in a production enviornment
-// app.use(express.static(path.join(__dirname, 'client/build')));
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname+'/client/build/index.html'));
-// });
+//serve react files in a production enviornment
+app.use(express.static(path.join(__dirname, 'client/build')));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
