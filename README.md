@@ -1,5 +1,5 @@
 # MERN Template
-![mern stack](mern.jpg)
+![mern stack](mern.png)
 
 ## Table of Contents
 * Introduction
