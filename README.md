@@ -2,12 +2,12 @@
 ![mern stack](mern.png)
 
 ## Table of Contents
-* Introduction
-* Setup for local development
-* Project structure
-* Customization
-* Deployment
-* Redux
+* [Introduction](#introduction)
+* [Setup for local development](#setup-for-local-development)
+* [Project structure](#project-structure)
+* [Customization](#customization)
+* [Deployment](#deployment)
+* [Redux](#redux)
 
 ## Introduction
 * This template is intended to provide the necessary architecture for quickly
