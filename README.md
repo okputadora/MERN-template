@@ -1,6 +1,6 @@
 # MERN Template
 ![mern stack](mern.jpg)
-
+[live example](https://merntemplate.herokuapp.com/)
 ## Table of Contents
 * [Introduction](#introduction)
 * [Setup for local development](#setup-for-local-development)
