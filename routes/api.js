@@ -1,16 +1,10 @@
-// A completely modular api route
-// this route imports our controllers and then grabs the appropriate one
-// based on the resource variable in the route.
-// Because we're not hardcoding any of the routes this api route can be used to
-// fetch our neighborhood zones, chat histories, and users by referreing to those controllers
-// Additionaly, this route file can be resued in any other project
 const express = require('express')
 const router = express.Router()
 const controllers = require('../controllers')
 
 router.get('/:resource', (req, res, next) => {
-	var resource = req.params.resource;
-	var controller = controllers[resource];
+	const resource = req.params.resource;
+	const controller = controllers[resource];
 	if (controller == null){
 		return res.json({
 			confirmation:'fail',
@@ -32,9 +26,9 @@ router.get('/:resource', (req, res, next) => {
 	})
 })
 router.get('/:resource/:id', (req, res, next) => {
-	var resource = req.params.resource
-	var id = req.params.id
-	var controller  = controllers[resource]
+	const resource = req.params.resource
+	const id = req.params.id
+	const controller  = controllers[resource]
 	if (controller == null){
 		res.json({
 			confirmation:'fail',
@@ -57,8 +51,8 @@ router.get('/:resource/:id', (req, res, next) => {
 })
 
 router.post('/:action', (req, res, next) => {
-	var action = req.params.action;
-	var controller = controllers[action]
+	const action = req.params.action;
+	const controller = controllers[action]
 	if (controller == null){
 		return res.json({
 			confirmation:'fail',
@@ -68,8 +62,7 @@ router.post('/:action', (req, res, next) => {
 	controller.post(req.body)
 	.then(result => {
 		if (action == 'inquiry'){
-			res.redirect('/confirmation')
-			return
+			return res.json(result);
 		}
 		res.json({
 			confirmation: 'success',
@@ -82,6 +75,27 @@ router.post('/:action', (req, res, next) => {
 			message: err
 		})
 	})
+})
+
+router.put('/:resouce', (req, res, next) => {
+  const resource = req.params.resource;
+  const controller = controller[resource];
+  if (controller == null){
+		return res.json({
+			confirmation:'fail',
+			message:'Invalid resource...check your spelling'
+		})
+	}
+  controller.put(req.body)
+  .then(result => {
+    res.json(result);
+  })
+  .catch(err => {
+    res.json({
+      confirmation: 'fail',
+      message: err,
+    })
+  })
 })
 
 module.exports = router;

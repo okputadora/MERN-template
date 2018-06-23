@@ -1,5 +1,6 @@
 # MERN Template
-![mern stack](mern.jpg)
+[mern stack](mern.jpg)
+
 [live example](https://merntemplate.herokuapp.com/)
 ## Table of Contents
 * [Introduction](#introduction)
