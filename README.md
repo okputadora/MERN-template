@@ -10,6 +10,14 @@
 * [Deployment](#deployment)
 * [Redux](#redux)
 
+## Table of Contents
+* [Introduction](#introduction)
+* [Setup for local development](#setup-for-local-development)
+* [Project structure](#project-structure)
+* [Customization](#customization)
+* [Deployment](#deployment)
+* [Redux](#redux)
+
 ## Introduction
 * This template is intended to provide the necessary architecture for quickly
 developing applications using the MERN (MongoDb, Express, React, Node) stack.
